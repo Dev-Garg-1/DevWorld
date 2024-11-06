@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+html {
+  scroll-behavior: smooth; /* Smooth scrolling when navigating to anchor links */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +33,12 @@
     color: #00ffff; /* Cyan accent color */
   }
 
+  .nav-icon {
+    color: #00FFFF; /* Change icon color to white */
+  font-size: 24px; /* Adjust size if needed  */
+  margin-right: 10px; /* Add spacing if needed */
+  }
+
   .navbar-center {
     display: flex;
     gap: 20px;
@@ -49,21 +60,29 @@
     gap: 10px;
   }
 
-  .navbar-right button {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #ff0055; /* Red for Sign Up/Login buttons */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+  /* Navbar Button Styling */
+.navbar-right button {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff0055; /* Red for Sign Up/Login buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
 
-  .navbar-right button:hover {
-    background-color: #ff3366; /* Lighter red on hover */
-  }
+.navbar-right button:hover {
+  background-color: #ff3366; /* Lighter red on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
+  box-shadow: 0 4px 8px rgba(255, 51, 102, 0.4); /* Soft shadow on hover */
+}
+
+/* Optional: Separate styling for each button if needed */
+.navbar-right button:first-child {
+  margin-right: 10px; /* Adjust spacing between buttons */
+}
 
 
 
@@ -144,12 +163,19 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .hero-buttons button:hover {
-    background-color: #ff3366;
-  }
+    transition: background-color 0.3s, transform 0.3s ease-in-out; /* Added transition for lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.hero-buttons button:hover {
+    background-color: #ff3366; /* Redder shade on hover */
+    transform: translateY(-6px); /* Button lifts slightly */
+}
+
+.hero-buttons button:active {
+    transform: translateY(2px); /* Pressed button effect */
+}
+
   
   
 
@@ -159,60 +185,83 @@
 
 
 
-  .features-section {
-    background-image: url('images/img4.jpg'); /* Just the background image */
-    background-size: cover; /* Cover the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Ensure it doesn’t repeat */
-    color: #333; /* Dark text for readability */
-    padding: 100px 20px;
-    position: relative; /* Positioning context for content */
-  }
-  
-  .section-title {
-    font-size: 40px;
-    color: #ff3366; /* Red accent */
-    text-transform: uppercase;
-    z-index: 2; /* Make sure the title stays on top */
-    position: relative;
-  }
-  
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 40px;
-    z-index: 2; /* Cards on top of the background image */
-    position: relative;
-  }
-  
-  .feature-card {
-    background-color: #f2f2f2; /* Light background for cards */
-    border-radius: 8px;
-    width: 30%; /* Each card takes 30% of the container width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .feature-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .card-title {
-    font-size: 24px;
-    color: #ff3366; /* Red accent */
-    margin-top: 10px;
-  }
-  
-  .card-description {
-    font-size: 16px;
-    color: #333;
-    margin-top: 10px;
-  }
+
+
+  /* Features Section Styling */
+.features-section {
+  background-image: url('../images/img4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  padding: 100px 20px;
+  position: relative;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 40px;
+  color: #ff3366;
+  text-transform: uppercase;
+  z-index: 2;
+  position: relative;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Feature Card Styling */
+.feature-card {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effects for Feature Card */
+.feature-card:hover {
+  transform: translateY(-30px); /* Lift the card up slightly */
+  box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+}
+
+/* Image inside Card */
+.feature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+/* Image Zoom on Hover */
+.feature-card:hover img {
+  transform: scale(1.05); /* Slight zoom on image for focus effect */
+}
+
+/* Card Title */
+.card-title {
+  font-size: 24px;
+  color: #ff3366;
+  margin-top: 10px;
+}
+
+/* Card Description */
+.card-description {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
 
 
 
@@ -253,18 +302,29 @@
 }
 
 .game-interaction button {
-    padding: 15px 30px;
-    background-color: #030303; /* Red button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  padding: 15px 30px;
+  background-color: #121212; /* Black button color */
+  color: white;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease; /* Smooth transition for effects */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .game-interaction button:hover {
-    background-color: #ff4d80; /* Hover effect */
+  background-color: #ff3366; /* Red color on hover */
+  color: white; /* Ensure text stays white on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow depth */
+  transform: translateY(-6px); /* Button slightly lifts more on hover */
 }
+
+.game-interaction button:active {
+  transform: translateY(2px); /* Slightly pressed effect when clicked */
+}
+
+
 
   
   
@@ -397,12 +457,22 @@
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-  }
-  
-  .agents-button:hover {
+    transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.agents-button:hover {
     background-color: #fff; /* White background on hover */
     color: #ff3366; /* Red text on hover */
-  }
+    transform: translateY(-6px); /* Lift effect */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.agents-button:active {
+    transform: translateY(2px); /* Button pressed effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly reduced shadow when pressed */
+}
+
   
   
   

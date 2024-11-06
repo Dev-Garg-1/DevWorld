@@ -10,23 +10,22 @@
 </head>
 <body>
 
-  <nav class="navbar">
+  <nav class="navbar"  id="home">
     <!-- Left side of navbar -->
-    <div class="navbar-left">DevWorld</div>
+    <div class="navbar-left"><i class="fa-solid fa-gamepad nav-icon"></i>DevWorld</div>
 
     <!-- Center links -->
     <div class="navbar-center">
-      <a href="#home">Home</a>
-      <a href="#modes">Game Modes</a>
+      <a href="#features">Game Features</a>
       <a href="#characters">Characters</a>
-      <a href="#weapons">Weapons</a>
-      <a href="#leaderboard">Leaderboard</a>
-      <a href="#community">Community</a>
+      <a href="#play">Play</a>
+      <a href="#about">About Us</a>
+      <a href="#footer">Community</a>
     </div>
 
     <!-- Right side buttons -->
     <div class="navbar-right">
-      <button>Sign Up</button>
+      <button onclick="window.location.href='pages/signup.html'">Sign Up</button>
       <button onclick="window.location.href='pages/login.html'">Log In</button>
     </div>
   </nav>
@@ -68,7 +67,7 @@
 
 
 <!-- Features Section -->
-<section class="features-section">
+<section class="features-section" id="features">
     <div class="features-left">
       <h2 class="section-title">Game Features</h2>
     </div>
@@ -102,9 +101,9 @@
 
 
 
-  <section class="game-interaction">
+  <section class="game-interaction" id="play">
     <div class="game-interaction-text">
-        <h2>Get Ready for Action</h2>
+        <h2 style="color: black;">Get Ready for Action</h2>
         <p>Welcome to the world of intense gameplay. Jump into the game, team up with your friends, and take on challenging missions with advanced weapons, strategies, and thrilling action!</p>
         <button>Play Now</button>
     </div>
@@ -119,7 +118,7 @@
 
 
 
-  <section class="about-game">
+  <section class="about-game" id="about">
     <div class="about-text">
       <h2>Welcome to DevWorld</h2>
       <p>Immerse yourself in the world of DevWorld, a thrilling and strategic shooting game where every move counts. Choose your team, take the battle to diverse environments, and conquer challenges with precision. Whether you're a casual player or a competitive pro, DevWorld brings excitement to all. Gear up for action, form alliances, and become a legend!</p>
@@ -140,7 +139,7 @@
 
 
 
-  <section class="agents-section">
+  <section class="agents-section" id="characters">
     <div class="agents-container">
       <div class="agents-image">
         <!-- Left side: Image of Agents -->
@@ -162,7 +161,7 @@
 
 
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <div class="footer-container">
         <div class="footer-content">
             <h4 class="footer-title">DevWorld</h4>
@@ -170,11 +169,10 @@
         </div>
         <div class="footer-links">
             <ul class="footer-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Maps</a></li>
-                <li><a href="#">Agents</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#characters">Agents</a></li>
             </ul>
         </div>
         <div class="footer-social">
