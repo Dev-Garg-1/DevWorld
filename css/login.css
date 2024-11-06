@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
   }
   
   body {
@@ -25,8 +28,8 @@
     background-color: #222;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    box-shadow: 0 4px 8px rgba(255, 51, 102, 0.3);
+    width: 100%;
   }
   
   .login-title {
@@ -47,7 +50,7 @@
     padding: 10px;
     margin-bottom: 15px;
     border: none;
-    border-radius: 5px;
+    border: 1px solid #ff3366; /* Red border */
     background-color: #333;
     color: #fff;
   }
